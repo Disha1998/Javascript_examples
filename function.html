@@ -1,0 +1,53 @@
+<!-- syntax 1 for display function -->
+
+<script>
+    function myname(name) {
+        console.log(name);
+    }
+    var name = "disha";
+    myname(name);
+</script>
+
+<!-- syntax-2 function using variable  -->
+
+<script>
+
+    var myname = function (name) {
+        let msg = "helloo i am disha";
+        return msg;
+    }
+
+    let val = myname(name);
+    console.log(val);
+
+</script>
+
+
+<!-- syntax-3 function using object  -->
+<script>
+    let myobj = {
+        name: "disha",
+        game: function () {
+            return "GTA";
+        }
+    }
+    console.log(myobj.game())
+
+</script>
+
+<!-- scope chain -->
+<script>
+
+    var a = "hello... ";
+    function first() {
+        var b = "how are you..? ";
+        second();
+
+        function second() {
+            var c = "i am disha...";
+            console.log(a + b + c);
+        }
+    }
+    first();
+
+</script>

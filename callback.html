@@ -1,0 +1,47 @@
+<!-- basic example -->
+
+<script>
+    function show(){
+        console.log("This is show function");
+
+    }
+    function disha(callback){
+        callback();
+    }
+    disha(show);
+</script>
+
+<!-- when we use an argument in function  -->
+<script>
+    function show(a){
+        console.log("This is show function " + a);
+
+    }
+    function disha(callback){
+        var a=95;
+        callback(a);
+   
+    }
+    disha(show);
+</script>
+
+<!-- now in trending this methode is use -->
+
+<script>
+    function show(callback){
+        var a= 56;
+        callback(a);
+    }
+    disha(a => console.log("I am Disha Sathavara " + a))
+</script>
+
+
+<!-- Asyncronuys callback -->
+
+<script>
+    setTimeout(function show(){
+        console.log("i am Function");
+    },5000);
+    console.log("End");
+</script>
+
