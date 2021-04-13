@@ -1,0 +1,41 @@
+<script>
+var a = 10;
+var b = 20;
+if(a > b){
+    alert("A is greater");
+}else{
+    alert("B is greater");
+}
+</script>
+
+
+<!-- confirm box -->
+
+<script>
+    var a = confirm("Do you like my Website..?");
+    if(a){
+        alert("Thank you");
+    }else{
+        alert("It's okay.");    
+    }
+</script>
+
+<!-- prompt box -->
+
+<script>
+    var per = prompt("Enter your Percentage...");
+    if(per >=80 && per <=100){
+        document.write("you are in merit");
+    }else  if(per >=60 && per < 80){
+        document.write("you are in 1st class");
+    }else  if(per >=45 && per <60){
+        document.write("you are in 2nd class <br>");
+    }else  if(per >=33 && per < 45){
+        document.write("you are in merit");
+    }else  if(per <33){
+        document.write("you are falil");
+    }else{
+        document.write("please enter valid persentage ");
+        
+    }
+</script>
