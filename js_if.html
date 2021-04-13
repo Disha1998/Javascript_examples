@@ -41,12 +41,35 @@
     }else  if(per >=60 && per < 80){
         document.write("you are in 1st class");
     }else  if(per >=45 && per <60){
-        document.write("you are in 2nd class");
+        document.write("you are in 2nd class <br>");
     }else  if(per >=33 && per < 45){
         document.write("you are in merit");
     }else  if(per <33){
         document.write("you are falil");
     }else{
-        document.write("please enter valid persentage");
+        document.write("please enter valid persentage ");
+        
     }
 </script>
+
+
+
+<!-- ternary operator -->
+
+<script>
+    
+    var a= 50;
+    var b;
+    (a == 100)? b = "True" : b = "False <br>";
+    document.write(b);
+    
+</script>
+
+<!-- second method of ternory operator -->
+<script>
+    var a=100;
+    var b;
+    b = "value is " + (a == 100 ? "True" : "Flase");
+    document.write(b);
+</script>
+
