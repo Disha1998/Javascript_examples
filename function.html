@@ -14,9 +14,34 @@
         document.write("helloo i am"+ " " + fname + " " + lname);
     
     }
-    hello("Disha","Sathavara");
+    hello("Disha","Sathavara <br>");
 </script>
 
+<!-- Function with return value example 1 -->
+<script>
+    function fullname(fname="Disha",lname="Sathavara"){
+      var a = fname + " - "  + lname;
+      return a;
+    }
+   var fn = fullname("Mummy","papa");
+   document.write(fn);
+</script>
+
+
+<!-- Function with return value example 1 -->
+<script>
+    function sum(math,sc,eng){
+        var sub = math + sc + eng;
+
+        return sub;
+    }
+    function per(tt){
+        var perc = tt/300 * 100;
+        document.write(perc);
+    }
+    var total = sum(80,78,85);
+    per(total);
+</script>
 
 <!-- syntax 1 for display function -->
 
