@@ -1,0 +1,54 @@
+<!-- there are 5 types of loop
+1) while loop
+2) do-while loop
+3) for loop
+4) for-in loop (objects ma use thay)
+5) forEach (Array) -->
+
+
+<!-- initialization
+        |
+ --- >  condition(false)---out of loop
+ |      |
+ |     True
+ |       |
+ ^---incriment(++)/Dectimint(--)   -->
+
+
+
+ <script>
+    //  While loop
+     var a = 1;
+     while (a <= 10) {
+         document.write(a +  ") Disha" + "<br>");
+         a++;
+     }
+ </script>
+
+ <!-- Do-while loop -->
+<script>
+    var a = 1;
+    do {
+        document.write(a + "] Sathavara" + "<br>");
+        a++;
+    } while (a <= 10);
+   
+</script>
+
+<!-- for loop -->
+<script>
+    for(var a = 1; a <=10; a++){
+        document.write("<li> mummy-papa <br> </li>");
+    }
+</script>
+
+<!-- Continue statement (only works on loops)-->
+<script>
+    for(var a = 1; a <=10; a++){
+        if(a==3){
+            document.write("Disha :  "  +a  + "<br>" );
+        continue; // break;
+        }
+        document.write("Number : " +a  + "<br>");
+    }
+</script>
