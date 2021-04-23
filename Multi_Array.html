@@ -1,0 +1,26 @@
+<script>
+    var ary = [
+        ["Disha", 22, "Bca", "Female","gandhinagar"],
+        ["Dhruv", 20, "B.com", "Male"],
+        ["Shilpa", 20, "BA", "Female"],
+        ["Mukesh", 22, "Bca", "Male"]
+
+
+    ];
+
+    // document.write(ary.length);//  ----> .length--> method of an array
+    document.write("<table border = '1px' cellspacing='0' cellpadding='5'>");
+
+    for (var a = 0; a < ary.length; a++) {
+      
+        document.write("<tr>");
+       
+            for (var b = 0; b < ary[a].length; b++) {
+           
+            document.write("<td>" + ary[a][b] + "</td>");
+        }
+        document.write("</tr>");
+        // document.write("<br>");
+    }
+    document.write("</table>")
+</script>
