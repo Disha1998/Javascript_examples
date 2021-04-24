@@ -1,0 +1,26 @@
+<script>
+    // create object , object within object,function within obj,
+    var a = {
+        Fname : "Disha",
+        Lname : "Sathavara",
+        Age : 22,
+        Country : "India",
+        Hobby : ['Singing','Dancing','Handball'],
+        Living : {
+            city : 'Gandhinagar',
+            State : 'Gujarat'
+        },
+        Salary : function(){
+            return 25000;
+        },
+        Fullname : function(){
+          return  this.Fname + " " + this.Lname;
+        }
+   }
+
+    document.write(a.Hobby + "<br>");//main object run
+    document.write(a.Living.city + "<br>");//object within object run
+    document.write(a.Salary() + "<br>"); //function run
+    document.write(a.Fullname()); //function run
+    console.log(a);
+</script>
