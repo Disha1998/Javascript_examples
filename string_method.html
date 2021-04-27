@@ -1,0 +1,123 @@
+<script>
+    // length
+    var a = "Disha Sathavara";
+    // document.write(a);
+    // var l = a.length
+    // document.write(l);
+    var l = a.toLowerCase();//same as Upper case
+    document.write(l);
+</script>
+<script>
+
+    // include()
+    var n = "Disha Sathavara";
+    var t = n.includes("Disha");//rigt that font or word which we want to find.
+    document.write(t);
+</script>
+
+<script>
+    // startsWith()-->string ke starting se hame jo search karna hai woh start karega
+    var a = "Hanuman Jayanti";
+    var h = a.startsWith("Hanu");//endsWith is an opposite like startWith
+    document.write(h);
+</script>
+
+<script>
+    // search()-->find word and return its INDEX.
+    var l = "Komal Kamlavti";
+    var s = l.search("Kam");//if its not find then its return "-1"
+    document.write(s);
+</script>
+<script>
+    // match()-->same nam ka word bar bar dhundega and ek array create kardega..
+    var m = "Disha sathavara Disha Disha";
+    var n = m.match(/Disha/g);//use REgular expration which is use in advanced javascript /is/g
+    document.write(n);
+</script>
+<script>
+    // indexOf()-->Index return karega & starting se search karna start karega
+    //lastIndexOf()-->last me se search karna stargt karega
+    var i = "Disha Human";
+    var j = i.indexOf("a");//word or character you can write
+    document.write(j);
+</script>
+<script>
+    // replace()-->
+    var r = "PHP is a great language";
+    var o = r.replace("PHP", "Javascript");
+    document.write(o);
+</script>
+
+<script>
+    // trim()-->space ko kam karta hai 
+
+    var t = "           Javascript";
+   var l = t.trim();
+    // alert(l);
+</script>
+
+<script>
+    // charAt()-->search kareli vastu je position par hase eno character return karse
+    var c = "Disha M. Sathavara";
+    var x =c.charAt(6);
+    document.write(x);
+</script>
+
+<script>
+    // charCodeAt()-->code table google mese milega jisme character ke code hote hai woh display hoge
+    var k = "Disha Sathavara";
+    var v = k.charCodeAt(1);
+    document.write(v);
+</script>
+
+<script>
+    // fromCharacterCode()--->code sheet ma je number par hoy e sign ke value display kare
+    var A = String.fromCharCode(97);
+    document.write(A);
+</script>
+<script>
+    // concat()-->ek te tethi vadhare Strings ne jodava mate use thay
+    var f = "Disha";
+    var g = "Sathavara";
+    var add = f.concat( "<br>"+g);
+    document.write(add);
+</script>
+
+<script>
+    // split()-->ek string ne todi ne alag alag array ma convert kare
+    var str="Disha Mukeshbhai Sathavara";
+    var ary = str.split(" ");
+    document.write(ary);
+</script>
+
+<script>
+    // repeat()-->string ne jetli var print karavvi hoy etli var karavi sako
+    var S = "Javascript is the best Language";
+    var T = S.repeat(3);
+    document.write(T + "<br>");
+</script>
+
+<script>
+    // slice()-->String na vacche thi koi word upadvo hoi tya uswe thay
+    var sli= "Good Morning Sunshine";
+    var Slic=sli.slice(4,12);//last thi try karvu hoy to (-1,-4) negitive values api sakay
+    document.write(Slic);
+</script>
+
+<script>
+    //substr()-->slice jevuj work kare but second parameter ma je digit lakhyo hoi egtla step e agad vadhe
+    var sub = "Disha sathavara gandhinagar";
+    var st= sub.substr(6,10);
+    document.write(st);
+
+    // substring()-->Also worked like substr..
+</script>
+
+<script>
+    // toString()-->koi pan data type ni value ne srtingg ma convert kare
+    var a = 10;
+    var b = a.toString();
+    document.write(b+20);
+</script>
+
+<!-- valueOf()--string ni je value hoy te j print kare (Dfault 6 use mate) -->
