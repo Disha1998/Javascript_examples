@@ -1,0 +1,27 @@
+<script>
+    // Map method is used for whithout changing on main array create 2nd array
+
+    var a = [10,20,30,40];
+
+    var b = a.map(test);
+    document.write(b);
+    function test(x){
+        return x * 10;
+    }
+
+
+    // Array of Objest using map()
+    var ary =[
+        {Fname : "Disha", Lname : "Sathavara"},
+        {Fname : "Dhruv", Lname : "Kadia"},
+        {Fname : "Kumud", Lname : "Soni"},
+        
+    ];
+
+    var b = ary.map(Exam);
+    document.write(b);
+    function Exam(c){
+        return c.Fname + " " + c.Lname;
+    }
+
+</script>
