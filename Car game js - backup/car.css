@@ -1,0 +1,124 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Girassol&display=swap');
+
+*{
+    margin: 0; padding: 0;
+}
+.hide{
+    display: none;
+}
+
+.carGame{
+    background-image: url('natu.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+
+.lines{
+    height: 100px;
+    width: 10px;
+    background: white;
+    position: absolute;
+    margin-left: 195px;
+}
+.score{
+    position: absolute;
+    top: 15px;
+    left: 40px;
+    background: rgb(0, 109, 128);
+    width: 300px;
+    line-height: 50px;
+    text-align: center;
+    color: white;
+    font-family: 'Girassol', cursive;
+}
+
+.enemy{
+    width: 70px;
+    height: 80px;
+    /* background:blue; */
+    position: absolute;
+    /* left:50px; */
+    bottom: 150px;
+    /* background-image:url('bluee.png'); */
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    /* border-radius: 100px; */
+    bottom: 5px;
+}
+.car{
+    width: 70px;
+    height: 80px;
+    /* background:blue; */
+    position: absolute;
+    bottom: 150px;
+    background-image: url('carr.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    bottom: 5px;
+    /* z-index: 1; */
+}
+
+.gameArea{
+    width: 400px;
+    height: 100vh;
+    background: rgb(51, 49, 49);
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+    border-left: 5px dashed white;
+    border-right: 5px dashed white ;
+}
+
+.startScreen{
+    position: absolute;
+    background: rgb(243, 95, 9);
+    color: black;
+    /* height: auto; */
+   border-radius: 4px;
+    left: 25%;;
+    top:50%;
+    z-index:1;
+    text-align: center;
+    padding: 15px;
+    margin: auto;
+    width: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    letter-spacing: 5px;
+    /* word-spacing: 3; */
+    text-transform: uppercase;
+    box-shadow: 6px 5px 5px rgb(56, 25, 25);
+
+}
+
+/* .hide{
+    display: none;
+} */
+ .fire{
+    position: absolute;
+    bottom: 10px;
+    right: 30px;
+    width: 100px;
+    height: 100px;
+    /* z-index: 2; */
+    /* background-image: url("fire.png"); */
+    /* border-radius: 50%; */
+    background-color: chartreuse;
+
+} 
+/* 
+.car {
+    position: relative;
+    height: 70px;
+    width: 80px;
+}
+
+.car img {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 12px;
+    width: 12px;
+} */

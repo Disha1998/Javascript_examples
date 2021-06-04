@@ -1,0 +1,28 @@
+#container{
+    position: relative;
+    width: 200px;
+    height: 200px;
+}
+#main_image{
+    position: relative;
+
+    width: 300px; ;
+    height: 100px;
+    /* background: blue; */
+    background: url("carr.png");
+    background-repeat: no-repeat;
+    background-size: 300px 100px;
+    object-fit: cover;
+}
+#overlay_image{
+    position: absolute;
+    bottom: 10px;
+    right: 80px;
+    width: 30px;
+    height: 30px;
+    background:url('fire.png');
+    background-repeat: no-repeat;
+    background-size: 170px 180px;
+    /* background-image: url("fire.png"); */
+    
+}

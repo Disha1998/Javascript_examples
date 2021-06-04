@@ -1,7 +1,7 @@
 
 <!-- Array Declaration -->
 <script>
-    var ary=[10,20,30];
+    var ary=[10,"Disha",30];
     document.write(ary[0] + "<br>" + ary[1]);
 </script>
 
@@ -24,11 +24,12 @@ document.write("<ul>");
     var ary = new Array(3);
 
     for(var g = 0; g < 3; g++){
-       ary[g] =  prompt("Enter the value : ");
+       ary[g] =  prompt("Enter the values : ");
        
     }
     document.write("<ul>");
-    for(var a = 0; a < 3; a++){
+    for(var a = 0; a < 3; a++)
+    {
         document.write("<li>" + ary[a] + "</li>");
     }
     
