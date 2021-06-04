@@ -19,32 +19,36 @@
             </p>
         </div>
         <div class="gameArea">
-          
+            <div class="car"></div>
+            <div class="fire"></div>
         </div>
     </div>
 </body>
 <!-- <script src="car.js"></script> -->
 
 <script>
-//     var enemy = ["Saab", "Volvo", "BMW"];
-// document.querySelector("enemy").innerHTML = enemy;
+    //     var enemy = ["Saab", "Volvo", "BMW"];
+    // document.querySelector("enemy").innerHTML = enemy;
     const score = document.querySelector(".score");
     const startScreen = document.querySelector(".startScreen");
     const gameArea = document.querySelector(".gameArea");
+    const car = document.querySelector(".car");
+    const fire = document.querySelector(".fire");
     // const fireFlame = document.querySelector("image");
 
     // let fire = document.querySelector(".fire");
 
-    let keys = { ArrowUp: false, ArrowDown: false, ArrowRight: false, ArrowLeft: false, X: false, F:false };
-    let player = { speed: 5, score: 0, fire: false };
+    let keys = { ArrowUp: false, ArrowDown: false, ArrowRight: false, ArrowLeft: false, X: false };
+    let player = { speed: 5, score: 0, fireFlame: false };
+    // let fireO = {speed : 5};
 
     //
     startScreen.addEventListener("click", start);
     document.addEventListener('keydown', keyDown);//keydown Event- it's shows which key is pressed by user 
     document.addEventListener('keyup', keyUp);
     document.addEventListener('keydown', X);
-    document.addEventListener('keydown', F);
-
+    // document.addEventListener('keydown', F);
+    // document.addEventListener('keyup', F);
 
 
     function keyDown(e) {
@@ -66,64 +70,71 @@
     function X(e) {
         e.preventDefault();
         //  console.log(e);
-         if(e.keyCode === 88){
+        if (e.keyCode === 88) {
             player.speed++;
-                 }
+        }
     }
 
     //when press 'F' then fire bullets are generate
-   
 
 
 
-    function F(e){
-        e.preventDefault();
-       
-        let fireFlame = document.createElement('IMG');
-        fireFlame.setAttribute('id', 'fire');
-       
-        if(e.keyCode === 70){
-            player.fire=true;
-        //   player.fireFlame ;
-            fireFlame.style.backgroundImage = "url('fire.png')";
-            fireFlame.xpos=(player.offsetLeft + (player.offsetWidth/2));
-            fireFlame.ypos= player.offsetTop - 10; 
 
-            fireFlame.style.left=fireFlame.xpos + "px";
-            fireFlame.style.top=fireFlame.ypos + "px";
+    document.addEventListener("keydown", function (e) {
 
 
-        //  fireFlame.y=player.y;
-        //  fireFlame.x=player.x;
-        // 
-         gameArea.appendChild(fireFlame);
-        }
-        //else{
-        //     fireDiv.style.visibility="hidden";
-        // }
+        fire.xpos = (car.offsetLeft + (car.offsetWidth / 2));
+        fire.ypos = car.offsetTop + 10;
+
+        fire.style.left = fire.xpos + "px";
+        fire.style.top = fire.ypos + "px";
+
         console.log(e);
-    }
-       
-            // function addShoot(e){
-            //     e.preventDefault();
-            //     if(e.keyCode === 70){
-            //         console.log(e);
-            //     // addShoot();
-            //     }
+        e.preventDefault();
 
-            //     player.fire=true;
-            //     fire.classList.remove("hide");
+        if (e.keyCode === 70) {
+            player.fireFlame = true;
+            if (fire.ypos >= 0) {
+                fire.ypos += 55;
+                fire.style.top = fire.ypos + "px";
+            }
+        } else {
+            player.fireFlame = false;
 
-             
-          
-            
-            // var img = document.createElement('img');
-            // img.src = "flame.jpg";
-            // document.querySelector('body').appendChild('fire');
-            // down.innerHTML = "Image Element Added."; 
-        
-    
-   
+        }
+
+    });
+
+    document.addEventListener("keyup", function (e) {
+        if (e.keyCode === 70) {
+            player.fireFlame = false;
+
+        }
+    });
+
+
+
+
+    // function addShoot(e){
+    //     e.preventDefault();
+    //     if(e.keyCode === 70){
+    //         console.log(e);
+    //     // addShoot();
+    //     }
+
+    //     player.fire=true;
+    //     fire.classList.remove("hide");
+
+
+
+
+    // var img = document.createElement('img');
+    // img.src = "flame.jpg";
+    // document.querySelector('body').appendChild('fire');
+    // down.innerHTML = "Image Element Added."; 
+
+
+
 
 
 
@@ -156,11 +167,12 @@
 
     //End game display some text like score and replay the game etc..
     function endGame() {
+        // gameArea.innerHTML = "";
         player.start = false;
         startScreen.classList.remove('hide');
-        startScreen.innerHTML = "Game Over <br> Your final score is  : " + player.score + "<br>" + 
-        "Click here to Restart the Game"
-        player.speed=5;
+        startScreen.innerHTML = "Game Over <br> Your final score is  : " + player.score + "<br>" +
+            "Click here to Restart the Game"
+        player.speed = 5;
     }
 
 
@@ -173,7 +185,7 @@
             if (isCollide(car, item)) {
                 // console.log("BOOM...!!");
                 endGame();
-                
+
             }
 
             //enemy car right ke left ma Road ni bahar na jati re etla mate 
@@ -188,11 +200,13 @@
         })
     }
 
-        //Main game play Function
+    //Main game play Function
     function gamePlay() {
         // console.log("Hey i clicked here...");
-        let car = document.querySelector('.car');
+        // let car = document.querySelector('.car');
         let road = gameArea.getBoundingClientRect();
+
+        // let Fire = document.querySelector('#fire');
         // console.log(road);
 
         // console.log(road);
@@ -204,7 +218,8 @@
 
             moveLines();
             moveEnemy(car);
-            
+            car.fire = false;
+
 
             if (keys.ArrowUp && player.y > road.top + 100) { player.y -= player.speed }
             if (keys.ArrowDown && player.y < (road.bottom - 70)) { player.y += player.speed }
@@ -213,29 +228,47 @@
 
 
 
+
             car.style.top = player.y + "px";
             car.style.left = player.x + "px";
-            
 
-            window.requestAnimationFrame(gamePlay);
-            // console.log(player.score++);
 
-            player.score++;
-            let ps = player.score - 1;
-            score.innerText = "SCORE  :  " + ps;
+            // if (keys.ArrowUp && fireO.y > road.top + 100) { fireO.y -= fireO.speed }
+            // if (keys.ArrowDown && fireO.y < (road.bottom - 70)) { fire.y += fireO.speed }
+            // if (keys.ArrowLeft && fireO.x > 0) { fireO.x -= fireO.speed }
+            // if (keys.ArrowRight && fireO.x < (road.width - 90)) { fireO.x += fireO.speed }
+
+            // if(Fire !== null){
+            //     Fire.style.top = fireO.y + "px";
+            //     Fire.style.left = fireO.x + "px";
 
         }
 
+
+
+
+        window.requestAnimationFrame(gamePlay);
+        // console.log(player.score++);
+
+        player.score++;
+        let ps = player.score - 1;
+        score.innerText = "SCORE  :  " + ps;
+
     }
 
+
+
     function start() {
-        // gameArea.classList.remove('hide');
+        gameArea.classList.remove('hide');
         startScreen.classList.add('hide');
-        gameArea.innerHTML = "";
+        // gameArea.innerHTML = "";
 
         window.requestAnimationFrame(gamePlay);
         player.start = true;
         player.score = 0;
+        let fire = document.querySelector(".fire");
+        car.fire = false;
+        car.fire = car.fire;
 
         for (x = 0; x < 5; x++) {
             let roadLine = document.createElement('div');
@@ -252,47 +285,31 @@
 
 
 
-        let car = document.createElement('div');
-        car.setAttribute('class', 'car');
-        // car.innerText="Hey car here";
-        gameArea.appendChild(car);
-        // F(car);
-        // if(car.keyCode===70){
-        //     car.fire=true;
-        
-        //     fireFlame.style.backgroundImage = "url('fire.png')";
-        //     fireFlame.xpos=(car.offsetLeft + (car.offsetWidth/2));
-        //     fireFlame.ypos= car.offsetTop - 10; 
-
-        //     fireFlame.style.left=car.xpos + "px";
-        //     fireFlame.style.top=car.ypos + "px";
-
-
-       
-        //  gameArea.appendChild(fireFlame);
-        //     // F();
-        // }
+        // let car = document.createElement('div');
+        // car.setAttribute('class', 'car');
+        // // car.innerText="Hey car here";
+        // gameArea.appendChild(car);
 
         player.x = car.offsetLeft;
         player.y = car.offsetTop;
 
-        
-      
-       
-        
+
+
+
+
         // console.log(car.offsetTop);
         // console.log(car.offsetLeft)
 
 
         //for enemy cars
-      
-// document.getElementById("demo").innerHTML = cars;
+
+        // document.getElementById("demo").innerHTML = cars;
         for (x = 0; x < 3; x++) {
             let enemyCar = document.createElement('div');
             enemyCar.setAttribute('class', 'enemy');
             let enemy = ["y.png", "b.png", "r.png"];
             console.log(enemy[x]);
-            
+
             enemyCar.y = ((x + 1) * 350) * -1;
             enemyCar.style.top = (enemyCar.y) + "px";
             enemyCar.style.backgroundImage = `url(${enemy[x]})`;

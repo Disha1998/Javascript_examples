@@ -52,12 +52,29 @@
     height: 80px;
     /* background:blue; */
     position: absolute;
-    bottom: 150px;
     background-image: url('carr.png');
     background-repeat: no-repeat;
     background-size: 100% 100%;
     bottom: 5px;
-    z-index: 1;
+    z-index: 2;
+}
+
+
+.fire{
+    position:absolute;
+   height: 60px;
+   width: 30px;
+   left: 12px;
+   background-image: url('firee.png');
+   background-repeat: no-repeat;
+   background-size: 100% 100%;
+   bottom: 5px;
+   z-index: 1;
+
+   /* background-color: chartreuse; */
+   /* background-color: chartreuse; */
+   
+   
 }
 
 .gameArea{
@@ -93,18 +110,6 @@
 
 }
 
-#fire{
-    position:absolute;
-    /* bottom: 10px; */
-    bottom: 0px;
-    right: 80px;
-    /* z-index: 1; */
-    height: 60px;
-    width: 30px;
-    background-color: chartreuse;
-    
-    
-}
 
 /* .hide{
     display: none;
