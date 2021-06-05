@@ -93,6 +93,7 @@
         e.preventDefault();
 
         if (e.keyCode === 70) {
+            fire.classList.remove('hide');
             player.fireFlame = true;
             if (fire.ypos >= 0) {
                 fire.ypos += 55;
@@ -103,6 +104,8 @@
 
         }
 
+       
+
     });
 
     document.addEventListener("keyup", function (e) {
@@ -110,7 +113,14 @@
             player.fireFlame = false;
 
         }
+        
+    if(e.keyCode===37 ||e.keyCode===38 || e.keyCode===39 || e.keyCode===40){
+            player.fireFlame==false;
+            fire.classList.add('hide');
+
+        }
     });
+
 
 
 
@@ -167,12 +177,12 @@
 
     //End game display some text like score and replay the game etc..
     function endGame() {
-        // gameArea.innerHTML = "";
+       
         player.start = false;
         startScreen.classList.remove('hide');
-        startScreen.innerHTML = "Game Over <br> Your final score is  : " + player.score + "<br>" +
-            "Click here to Restart the Game"
-        player.speed = 5;
+        startScreen.innerHTML = "Game Over <br> Your final score is  : " + player.score + "<br>" + 
+        "Click here to Restart the Game"
+        player.speed=5;
     }
 
 
@@ -185,6 +195,7 @@
             if (isCollide(car, item)) {
                 // console.log("BOOM...!!");
                 endGame();
+                // player.score==false;
 
             }
 
